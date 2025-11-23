@@ -7,8 +7,8 @@ export class AuthService {
     
    constructor(private jwtService:JwtService){}
     login(Credentiales:LoginAuthDto){
-        let payload={email:"admin@gmail.com",id:1} //ojo las comillas
-        const token= this.jwtService.sign(payload)
+        let payload={email:"admin@gmail.com",id:1}; //ojo las comillas
+        const token= this.jwtService.sign(payload);
         return{token:token};
     }
 }
