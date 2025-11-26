@@ -1,18 +1,25 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Persona } from "../../persona/entities/persona.entity";
+import { join } from 'path';
 
-@Entity()
+@Entity('user')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  cedula: string;
+  @Column({type:'varchar',length:50})
+  name: string;
 
-  @Column()
-  telefono: string;
+  @Column({type:'varchar',length:255,unique:true})
+  email:string
 
- @OneToOne(()=>Persona, persona=>persona.user,{cascade:true})
-   persona:Persona;
+  @Column({type:'varchar',length:200})
+  password:string
+
+ 
+  @OneToOne(()=>Persona, persona=>persona.user,{cascade:true})
+   @JoinColumn()
+ persona:Persona;
+  
   
 }

@@ -1,0 +1,20 @@
+### Listar productos
+
+GET http://localhost:3000/producto
+
+---
+
+### Crear producto
+
+POST http://localhost:3000/producto
+Content-Type: application/json
+
+
+{
+  "nombre": "Procesador",
+  "precio": "150",
+  "stock":13,
+  "categoriaId":1
+}
+### Busqueda por nombre
+GET http://localhOst:3000/producto/back?page=1&q=mm&qsort=asc

@@ -14,5 +14,5 @@ import{ User } from "../../users/entities/user.entity";
 
 
   @OneToOne(()=>User, user=>user.persona)
-  @JoinColumn()
+  @JoinColumn({name:'userId'})
   user:User }

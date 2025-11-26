@@ -17,6 +17,8 @@ export const databaseProvider = [
         password: config.get('PASSWORD') || 'prueba',
         database: config.get('DATABASE'),
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        synchronize: false,
+        logging:true,
       });
       return dataSource.initialize();
     },

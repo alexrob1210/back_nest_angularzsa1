@@ -11,7 +11,7 @@ import { ProductoModule } from './modules/producto/producto.module';
 import { RoleModule } from './modules/role/role.module';
 import { ClienteModule } from './modules/cliente/cliente.module';
 import { PedidoModule } from './modules/pedido/pedido.module';
-
+import { User } from './modules/users/entities/user.entity';
 @Module({
   imports: [AuthModule, UsersModule, DatabaseModule, ConfigModule, CategoriaModule, PersonaModule, ProductoModule, RoleModule, ClienteModule, PedidoModule],
   controllers: [AppController],
